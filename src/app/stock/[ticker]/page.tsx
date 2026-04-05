@@ -104,7 +104,7 @@ function normalizeSignal(raw: string): { label: string; bg: string; Icon: typeof
 function SignalBadge({ signal }: { signal: string }) {
   const s = normalizeSignal(signal);
   return (
-    <span className={`${s.bg} inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-bold border-[3px] border-fg`}>
+    <span className={`${s.bg} inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-bold border-[2px] border-border`}>
       <s.Icon size={14} strokeWidth={3} />
       {s.label}
     </span>

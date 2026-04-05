@@ -113,7 +113,7 @@ function Hero() {
                 },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-yellow flex items-center justify-center border-[3px] border-fg shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-yellow flex items-center justify-center border-[2px] border-border shrink-0">
                     <step.Icon size={14} strokeWidth={3} />
                   </div>
                   <div>
@@ -206,7 +206,7 @@ function SectorDetail({
       <div className="flex items-center justify-between mb-3 shrink-0">
         <h3 className="text-lg font-bold">{sector.sector}</h3>
         <span
-          className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-bold border-[3px] border-fg ${
+          className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-bold border-[2px] border-border ${
             sector.strength >= 7
               ? "bg-green"
               : sector.strength >= 5

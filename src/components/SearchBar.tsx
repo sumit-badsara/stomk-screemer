@@ -66,18 +66,18 @@ export default function SearchBar() {
   }
 
   return (
-    <div ref={ref} className="relative w-full max-w-xs">
+    <div ref={ref} className="relative w-full max-w-[140px] sm:max-w-xs min-w-0">
       <div className="btn flex items-center gap-2 bg-cream px-3 py-1.5">
-        <Search size={16} strokeWidth={3} className="text-fg/60 shrink-0" />
+        <Search size={16} strokeWidth={3} className="text-muted shrink-0" />
         <input
           type="text"
           value={query}
           onChange={(e) => handleChange(e.target.value)}
           onFocus={() => results.length > 0 && setOpen(true)}
           placeholder="Search stocks..."
-          className="bg-transparent text-sm font-bold w-full outline-none placeholder:text-fg/40"
+          className="bg-transparent text-sm font-bold w-full outline-none placeholder:text-muted/60"
         />
-        {loading && <Loader2 size={14} strokeWidth={3} className="animate-spin text-fg/60" />}
+        {loading && <Loader2 size={14} strokeWidth={3} className="animate-spin text-muted" />}
         {query && !loading && (
           <button
             onClick={() => {
@@ -86,7 +86,7 @@ export default function SearchBar() {
               setOpen(false);
             }}
           >
-            <X size={14} strokeWidth={3} className="text-fg/60" />
+            <X size={14} strokeWidth={3} className="text-muted" />
           </button>
         )}
       </div>
@@ -101,7 +101,7 @@ export default function SearchBar() {
             >
               <div className="min-w-0">
                 <div className="text-sm font-bold truncate">{r.name}</div>
-                <div className="text-xs text-fg/60 font-semibold">
+                <div className="text-xs text-muted font-semibold">
                   {r.symbol} &middot; {r.exchange}
                 </div>
               </div>

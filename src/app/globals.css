@@ -1,22 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #fffdf5;
-  --fg: #1a1a1a;
-  --border: #1a1a1a;
-  --green: #c6f6d0;
-  --green-dark: #16a34a;
-  --red: #fecaca;
-  --red-dark: #dc2626;
-  --lavender: #ddd6fe;
-  --yellow: #ffd43b;
-  --yellow-light: #fef9c3;
-  --cream: #fffdf5;
-  --shadow: 4px 4px 0 #1a1a1a;
-  --shadow-sm: 2px 2px 0 #1a1a1a;
-  --shadow-lg: 6px 6px 0 #1a1a1a;
+  /* Financial Dashboard Dark — based on UI/UX Pro Max audit */
+  --bg: #020617;
+  --fg: #F8FAFC;
+  --border: #334155;
+  --green: #052e16;
+  --green-dark: #22C55E;
+  --red: #450a0a;
+  --red-dark: #EF4444;
+  --lavender: #1A1E2F;
+  --yellow: #1e3a5f;
+  --yellow-light: #0C0A00;
+  --cream: #0E1223;
+  --muted: #94A3B8;
+
+  /* Dark mode: subtle shadow using border glow, not white offset */
+  --shadow: 3px 3px 0 #1e293b;
+  --shadow-sm: 2px 2px 0 #1e293b;
+  --shadow-lg: 4px 4px 0 #1e293b;
   --radius: 12px;
-  --border-w: 4px;
+  --border-w: 2px;
 }
 
 @theme inline {
@@ -31,6 +35,7 @@
   --color-yellow: var(--yellow);
   --color-yellow-light: var(--yellow-light);
   --color-cream: var(--cream);
+  --color-muted: var(--muted);
   --font-sans: "Space Grotesk", system-ui, sans-serif;
 }
 
@@ -45,7 +50,7 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* Neo-brutalist card */
+/* Neo-brutalist card — dark mode uses subtle borders + elevation */
 .card {
   border: var(--border-w) solid var(--border);
   border-radius: var(--radius);
@@ -56,10 +61,11 @@ body {
 .card:hover {
   transform: translate(-2px, -2px);
   box-shadow: var(--shadow-lg);
+  border-color: #475569;
 }
 
 .card:active {
-  transform: translate(4px, 4px);
+  transform: translate(3px, 3px);
   box-shadow: none;
 }
 
@@ -76,6 +82,7 @@ body {
 .btn:hover {
   transform: translate(-1px, -1px);
   box-shadow: var(--shadow);
+  border-color: #475569;
 }
 
 .btn:active {
@@ -90,12 +97,12 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
-/* Focus states — thick neo-brutalist outline */
+/* Focus states */
 .card:focus-visible,
 .btn:focus-visible,
 .panel:focus-visible,
 a:focus-visible {
-  outline: 3px solid var(--fg);
+  outline: 2px solid var(--green-dark);
   outline-offset: 2px;
 }
 
@@ -117,7 +124,7 @@ a:focus-visible {
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -126,5 +133,5 @@ a:focus-visible {
 
 ::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 4px;
+  border-radius: 3px;
 }

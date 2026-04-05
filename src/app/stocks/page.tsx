@@ -45,7 +45,7 @@ function normalizeSignal(signal: string, consensus?: string): { label: string; b
 function SignalBadge({ signal, consensus }: { signal: string; consensus?: string }) {
   const s = normalizeSignal(signal, consensus);
   return (
-    <span className={`${s.bg} inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold border-[3px] border-fg`}>
+    <span className={`${s.bg} inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold border-[2px] border-border`}>
       <s.Icon size={12} strokeWidth={3} />
       {s.label}
     </span>
@@ -55,7 +55,7 @@ function SignalBadge({ signal, consensus }: { signal: string; consensus?: string
 function ScoreBadge({ score }: { score: number }) {
   const bg = score >= 7 ? "bg-green" : score >= 5 ? "bg-yellow-light" : "bg-red";
   return (
-    <span className={`${bg} inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold border-[3px] border-fg tabular-nums`}>
+    <span className={`${bg} inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold border-[2px] border-border tabular-nums`}>
       {score}/10
     </span>
   );

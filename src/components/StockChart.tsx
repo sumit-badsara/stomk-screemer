@@ -28,36 +28,36 @@ export default function StockChart({ symbol }: Props) {
 
     const chart = createChart(containerRef.current, {
       layout: {
-        background: { type: ColorType.Solid, color: "#fffdf5" },
-        textColor: "#1a1a1a",
+        background: { type: ColorType.Solid, color: "#0E1223" },
+        textColor: "#94A3B8",
         fontFamily: "Space Grotesk, system-ui, sans-serif",
       },
       grid: {
-        vertLines: { color: "#1a1a1a10" },
-        horzLines: { color: "#1a1a1a10" },
+        vertLines: { color: "#33415520" },
+        horzLines: { color: "#33415520" },
       },
       width: containerRef.current.clientWidth,
       height: 260,
       timeScale: {
-        borderColor: "#1a1a1a20",
+        borderColor: "#33415540",
         timeVisible: true,
       },
       rightPriceScale: {
-        borderColor: "#1a1a1a20",
+        borderColor: "#33415540",
       },
       crosshair: {
-        vertLine: { color: "#1a1a1a40", width: 1, style: 2 },
-        horzLine: { color: "#1a1a1a40", width: 1, style: 2 },
+        vertLine: { color: "#94A3B840", width: 1, style: 2 },
+        horzLine: { color: "#94A3B840", width: 1, style: 2 },
       },
     });
 
     const series = chart.addSeries(CandlestickSeries, {
-      upColor: "#16a34a",
-      downColor: "#dc2626",
-      borderUpColor: "#1a1a1a",
-      borderDownColor: "#1a1a1a",
-      wickUpColor: "#16a34a",
-      wickDownColor: "#dc2626",
+      upColor: "#22C55E",
+      downColor: "#EF4444",
+      borderUpColor: "#475569",
+      borderDownColor: "#475569",
+      wickUpColor: "#22C55E",
+      wickDownColor: "#EF4444",
     });
 
     chartRef.current = chart;
@@ -123,7 +123,7 @@ export default function StockChart({ symbol }: Props) {
       <div className="relative">
         <div ref={containerRef} className="w-full" />
         {loading && (
-          <div className="absolute inset-0 flex items-center justify-center bg-cream/80">
+          <div className="absolute inset-0 flex items-center justify-center bg-cream/90">
             <Loader2 size={20} strokeWidth={3} className="animate-spin" />
           </div>
         )}

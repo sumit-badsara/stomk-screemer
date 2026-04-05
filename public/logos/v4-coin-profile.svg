@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#FFFDF5" stroke="#1a1a1a" stroke-width="3.5"/>
+  <!-- Coin outer ring -->
+  <circle cx="30" cy="32" r="22" fill="#FFD43B" stroke="#1a1a1a" stroke-width="2.5"/>
+  <!-- Coin inner ring -->
+  <circle cx="30" cy="32" r="18.5" fill="none" stroke="#1a1a1a" stroke-width="0.8" opacity="0.25"/>
+  <!-- Profile silhouette inside coin -->
+  <path d="M 20 46 L 20 26
+           C 20 19 24 17 28 18
+           C 31 19 32 22 32 25
+           C 33.5 25 35 26.5 35 29
+           L 35 30.5
+           L 33 30.5
+           L 33 32.5
+           L 35 32.5
+           L 35 34
+           L 33 36
+           C 31 39 28 43 24 46 Z"
+        fill="#1a1a1a"/>
+  <!-- Eye -->
+  <circle cx="26" cy="25.5" r="1.5" fill="#FFD43B"/>
+  <!-- Rupee on right side of coin -->
+  <path d="M 40 27 h 7 M 40 30.5 h 7 M 42 27 C 45.5 27 46 33.5 42 34 L 47 39"
+        stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

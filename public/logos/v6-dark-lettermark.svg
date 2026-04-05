@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="3.5"/>
+  <!-- Stylized S that reads as a screaming mouth in profile -->
+  <path d="M 42 12
+           C 28 12 16 17 16 26
+           C 16 33 24 36 34 36
+           C 44 36 48 39 48 44
+           C 48 52 36 56 22 56"
+        stroke="#FFD43B" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+  <!-- Eye dot positioned on the S curve to suggest a face -->
+  <circle cx="22" cy="26" r="3" fill="#FFD43B"/>
+  <!-- Rupee where the S crosses itself (the "scream" zone) -->
+  <path d="M 34 30 h 7 M 34 34 h 7 M 36 30 C 39 30 39.5 36 36 36.5 L 41 42"
+        stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Micro uptrend -->
+  <path d="M 48 50 L 52 46 L 56 48 L 58 44"
+        stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+</svg>

@@ -31,27 +31,31 @@ export default function RootLayout({
           fontFamily: "var(--font-space-grotesk), system-ui, sans-serif",
         }}
       >
-        <header className="border-b-[4px] border-fg px-4 sm:px-6 py-3 flex items-center justify-between gap-4 bg-bg">
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <Logo size={30} />
-            <h1 className="text-xl font-bold tracking-tight">
+        <header className="border-b-[2px] border-border px-4 sm:px-6 py-3 flex items-center justify-between gap-3 bg-cream overflow-hidden">
+          <Link
+            href="/"
+            className="flex items-center gap-2 shrink-0 border-[2px] border-border rounded-xl px-2.5 py-1.5 hover:bg-fg/5 transition-colors"
+          >
+            <Logo size={24} />
+            <span className="text-base sm:text-lg font-bold tracking-tight hidden sm:inline">
               Stomk<span className="text-green-dark">Screemer</span>
-            </h1>
+            </span>
           </Link>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <Link
               href="/stocks"
-              className="btn bg-yellow px-4 py-1.5 text-sm inline-flex items-center gap-1.5 whitespace-nowrap hidden sm:inline-flex"
+              className="btn bg-yellow px-3 sm:px-4 py-1.5 text-sm inline-flex items-center gap-1.5 whitespace-nowrap shrink-0"
             >
               <BarChart3 size={14} strokeWidth={3} />
-              Top&nbsp;Stocks
+              <span className="hidden sm:inline">Top&nbsp;Stocks</span>
+              <span className="sm:hidden">Stocks</span>
             </Link>
             <SearchBar />
           </div>
         </header>
         <main className="flex-1">{children}</main>
-        <footer className="border-t-[4px] border-fg px-4 sm:px-6 py-4 bg-bg">
-          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-fg/50 font-semibold">
+        <footer className="border-t-[2px] border-border px-4 sm:px-6 py-4 bg-cream">
+          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted font-semibold">
             <div className="flex items-center gap-2">
               <Logo size={18} />
               <span>StomkScreemer</span>
