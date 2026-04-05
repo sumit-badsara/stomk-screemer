@@ -276,6 +276,16 @@ export default function StockDetail({
         </div>
       </div>
 
+      {/* Not analysed banner */}
+      {!sheetStock && !mockStock && !loadingF && (
+        <div className="panel p-3 bg-yellow-light mb-5 inline-flex items-center gap-2">
+          <Activity size={14} strokeWidth={3} className="text-fg/50 shrink-0" />
+          <span className="text-sm font-bold text-fg/70">
+            Not analysed &mdash; AI analysis not available for this stock yet. Showing live market data only.
+          </span>
+        </div>
+      )}
+
       {/* Mission Control Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 
