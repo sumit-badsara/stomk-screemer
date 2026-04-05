@@ -1,26 +1,130 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #fffdf5;
+  --fg: #1a1a1a;
+  --border: #1a1a1a;
+  --green: #c6f6d0;
+  --green-dark: #16a34a;
+  --red: #fecaca;
+  --red-dark: #dc2626;
+  --lavender: #ddd6fe;
+  --yellow: #ffd43b;
+  --yellow-light: #fef9c3;
+  --cream: #fffdf5;
+  --shadow: 4px 4px 0 #1a1a1a;
+  --shadow-sm: 2px 2px 0 #1a1a1a;
+  --shadow-lg: 6px 6px 0 #1a1a1a;
+  --radius: 12px;
+  --border-w: 4px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-border: var(--border);
+  --color-green: var(--green);
+  --color-green-dark: var(--green-dark);
+  --color-red: var(--red);
+  --color-red-dark: var(--red-dark);
+  --color-lavender: var(--lavender);
+  --color-yellow: var(--yellow);
+  --color-yellow-light: var(--yellow-light);
+  --color-cream: var(--cream);
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+/* Tabular figures for prices and numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Neo-brutalist card */
+.card {
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+/* Neo-brutalist button */
+.btn {
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow);
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* Panel for mission control */
+.panel {
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Focus states — thick neo-brutalist outline */
+.card:focus-visible,
+.btn:focus-visible,
+.panel:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--fg);
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .btn {
+    transition: none;
+  }
+
+  .card:hover,
+  .card:active,
+  .btn:hover,
+  .btn:active {
+    transform: none;
+    box-shadow: var(--shadow);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
 }
