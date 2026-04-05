@@ -3,11 +3,14 @@ import { JWT } from "google-auth-library";
 import path from "node:path";
 import fs from "node:fs";
 
-const SHEET_ID = "1RZVlvZPn5m4XaQz39TR-afkZc7IR90fai65JvUtJn-4";
+const SHEET_ID = process.env.GOOGLE_SHEET_ID ?? "1RZVlvZPn5m4XaQz39TR-afkZc7IR90fai65JvUtJn-4";
 const CREDS_PATH = path.join(process.cwd(), "service-account.json");
 const FALLBACK_CREDS_PATH = "/Users/sumit/Downloads/stomkscreemer-cd889f1ec058.json";
 
 function loadCreds(): { client_email: string; private_key: string } {
+  if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON) {
+    return JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON);
+  }
   const p = fs.existsSync(CREDS_PATH) ? CREDS_PATH : FALLBACK_CREDS_PATH;
   return JSON.parse(fs.readFileSync(p, "utf-8"));
 }

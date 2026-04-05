@@ -4,11 +4,20 @@ import { JWT } from "google-auth-library";
 import fs from "node:fs";
 import { getCached, setCache } from "@/lib/cache";
 
-const SHEET_ID = "1RZVlvZPn5m4XaQz39TR-afkZc7IR90fai65JvUtJn-4";
+const SHEET_ID = process.env.GOOGLE_SHEET_ID ?? "1RZVlvZPn5m4XaQz39TR-afkZc7IR90fai65JvUtJn-4";
 const CREDS_PATH = "/Users/sumit/Downloads/stomkscreemer-cd889f1ec058.json";
 
+function getCreds(): { client_email: string; private_key: string } {
+  // Env var takes priority (for Vercel/production)
+  if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON) {
+    return JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON);
+  }
+  // Local file fallback
+  return JSON.parse(fs.readFileSync(CREDS_PATH, "utf-8"));
+}
+
 function getAuth() {
-  const creds = JSON.parse(fs.readFileSync(CREDS_PATH, "utf-8"));
+  const creds = getCreds();
   return new JWT({
     email: creds.client_email,
     key: creds.private_key,
